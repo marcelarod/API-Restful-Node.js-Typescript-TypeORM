@@ -1,8 +1,10 @@
 import { Router } from 'express';
+import ProductsRouter from '@modules/products/routes/products.routes';
+import usersRouter from '@modules/users/routes/users.routes';
 
 const routes = Router();
 
-routes.get('/', (request, response) => {
-  return response.json({ message: 'oi' });
-});
+routes.use('/products', ProductsRouter);
+routes.use('/user', usersRouter);
+
 export default routes;
